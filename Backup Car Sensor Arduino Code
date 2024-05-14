@@ -1,0 +1,24 @@
+const int leftSensorPin = 2;   
+const int middleSensorPin = 3; 
+const int rightSensorPin = 4;  
+const int ledPin = 13;         
+
+void setup() {
+  pinMode(leftSensorPin, INPUT);   
+  pinMode(middleSensorPin, INPUT); 
+  pinMode(rightSensorPin, INPUT);  
+  pinMode(ledPin, OUTPUT);         
+}
+
+void loop() {
+  
+  int leftSensorState = digitalRead(leftSensorPin);
+  int middleSensorState = digitalRead(middleSensorPin);
+  int rightSensorState = digitalRead(rightSensorPin);
+
+  if (leftSensorState == HIGH && middleSensorState == HIGH && rightSensorState == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
